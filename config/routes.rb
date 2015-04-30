@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get("/", { :controller => "pages", :action => "instructions" })
+  get("/", { :controller => "geocoding", :action => "street_to_coords_form" })
 
   get("/street_to_coords/new", { :controller => "geocoding", :action => "street_to_coords_form" })
   get("/street_to_coords", { :controller => "geocoding", :action => "street_to_coords" })
