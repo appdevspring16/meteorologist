@@ -254,6 +254,9 @@ Good luck!
 
 ## Optional Extra Exercises, for fun
 
+### Programmable Web (Easier)
+
+Browse [Programmable Web's API Directory](http://www.programmableweb.com/category/all/apis?order=field_popularity) and get inspired!
 
 ### Bootstrap (Easier)
 
