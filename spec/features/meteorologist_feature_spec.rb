@@ -11,7 +11,7 @@ RSpec.describe 'Meteorologist feature', type: :feature do
 
     context 'Main Exercise' do
       it "displays the street address", points: 0 do
-        expect(page).to have_content(/#{@address}}/i)
+        expect(page).to have_content(/#{@address}/i)
       end
 
       it "displays the current temperature", points: 5 do

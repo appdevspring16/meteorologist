@@ -11,7 +11,7 @@ RSpec.describe 'Geocoding feature', type: :feature do
 
     context 'Main Exercise' do
       it "displays the street address", points: 0 do
-        expect(page).to have_content(/#{@address}|#{Regexp.quote(@address.gsub('+', ' '))}/i)
+        expect(page).to have_content(/#{@address}/i)
       end
 
       it "displays the latitude", points: 5 do
