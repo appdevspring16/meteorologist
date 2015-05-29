@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Forecast feature', type: :feature do
+RSpec.describe 'Geocoding feature', type: :feature do
 
   describe "GET /street_to_coords/new" do
     before do
@@ -11,7 +11,7 @@ RSpec.describe 'Forecast feature', type: :feature do
 
     context 'Main Exercise' do
       it "displays the street address", points: 0 do
-        expect(page).to have_content(/#{Regexp.quote(@address)}|#{Regexp.quote(@address.gsub('+', ' '))}/i)
+        expect(page).to have_content(/#{@address}|#{Regexp.quote(@address.gsub('+', ' '))}/i)
       end
 
       it "displays the latitude", points: 5 do

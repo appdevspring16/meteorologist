@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe 'Forecast feature', type: :feature do
+RSpec.describe 'Meteorologist feature', type: :feature do
 
   describe "GET /street_to_weather/new" do
     before do
       visit "/street_to_weather/new"
       fill_in "Street Address", with: @address
-      click_button "Tell me the weather!"
+      click "Tell me the weather!"
     end
 
     context 'Main Exercise' do
       it "displays the street address", points: 0 do
-        expect(page).to have_content(/#{@address}|#{@address.gsub('+', ' ')}/i)
+        expect(page).to have_content(/#{@address}}/i)
       end
 
       it "displays the current temperature", points: 5 do
@@ -30,7 +30,7 @@ RSpec.describe 'Forecast feature', type: :feature do
       end
 
       it "displays the outlook for the next several hours", points: 5 do
-        outlook = 'Mostly cloudy throughout the day'
+        outlook = 'Mixed precipitation starting tomorrow morning, continuing until tomorrow afternoon'
         expect(page).to have_content(/#{outlook}/i)
       end
 

@@ -35,7 +35,7 @@ RSpec.describe 'Forecast feature', type: :feature do
       end
 
       it "displays the outlook for the next several hours", points: 5 do
-        outlook = 'Mostly cloudy throughout the day'
+        outlook = 'Mixed precipitation starting tomorrow morning, continuing until tomorrow afternoon'
         expect(page).to have_content(/#{outlook}/i)
       end
 

@@ -52,7 +52,7 @@ RSpec.configure do |config|
 
   # Sets up stubs for all tests
   config.before(:each) do
-    @address = '1600+Pennsylvania+Ave+NW'
+    @address = '1600 Pennsylvania Ave NW'
     address_regex = /1600.*Pennsylvania.*Ave.*NW/
     maps_url = /.*maps.googleapis.com\/maps\/api\/geocode\/json.address=#{Regexp.new(address_regex)}/
     stub_request(:any, maps_url).to_return(body: File.new('spec/maps_response_body.txt'), status: 200)
