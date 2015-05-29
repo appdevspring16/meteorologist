@@ -1,0 +1,429 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "1600",
+               "short_name" : "1600",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Pennsylvania Avenue Northwest",
+               "short_name" : "Pennsylvania Ave NW",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Northwest Washington",
+               "short_name" : "Northwest Washington",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Washington",
+               "short_name" : "D.C.",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "District of Columbia",
+               "short_name" : "DC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "20500",
+               "short_name" : "20500",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "1600 Pennsylvania Avenue Northwest, Washington, DC 20500, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 38.8977332,
+               "lng" : -77.0365305
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 38.8990246802915,
+                  "lng" : -77.03517901970848
+               },
+               "southwest" : {
+                  "lat" : 38.8963267197085,
+                  "lng" : -77.0378769802915
+               }
+            }
+         },
+         "place_id" : "ChIJcw5BAI63t4kRj5qZY1MSyAo",
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "1600",
+               "short_name" : "1600",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Pennsylvania Avenue Northwest",
+               "short_name" : "Pennsylvania Ave NW",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Jacksonville",
+               "short_name" : "Jacksonville",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Calhoun County",
+               "short_name" : "Calhoun County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Alabama",
+               "short_name" : "AL",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "36265",
+               "short_name" : "36265",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "1600 Pennsylvania Avenue Northwest, Jacksonville, AL 36265, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 33.8257529,
+                  "lng" : -85.7774242
+               },
+               "southwest" : {
+                  "lat" : 33.8257528,
+                  "lng" : -85.7774426
+               }
+            },
+            "location" : {
+               "lat" : 33.8257528,
+               "lng" : -85.7774426
+            },
+            "location_type" : "RANGE_INTERPOLATED",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 33.8271018302915,
+                  "lng" : -85.7760844197085
+               },
+               "southwest" : {
+                  "lat" : 33.8244038697085,
+                  "lng" : -85.7787823802915
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "Ej8xNjAwIFBlbm5zeWx2YW5pYSBBdmVudWUgTm9ydGh3ZXN0LCBKYWNrc29udmlsbGUsIEFMIDM2MjY1LCBVU0E",
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "1600",
+               "short_name" : "1600",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Pennsylvania Avenue",
+               "short_name" : "Pennsylvania Ave",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Miramar",
+               "short_name" : "Miramar",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Jacksonville",
+               "short_name" : "Jacksonville",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Duval County",
+               "short_name" : "Duval County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Florida",
+               "short_name" : "FL",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "32207",
+               "short_name" : "32207",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "5213",
+               "short_name" : "5213",
+               "types" : [ "postal_code_suffix" ]
+            }
+         ],
+         "formatted_address" : "1600 Pennsylvania Avenue, Jacksonville, FL 32207, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 30.28949369999999,
+                  "lng" : -81.65389519999999
+               },
+               "southwest" : {
+                  "lat" : 30.2894826,
+                  "lng" : -81.65390839999999
+               }
+            },
+            "location" : {
+               "lat" : 30.2894826,
+               "lng" : -81.65390839999999
+            },
+            "location_type" : "RANGE_INTERPOLATED",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 30.29083713029149,
+                  "lng" : -81.65255281970849
+               },
+               "southwest" : {
+                  "lat" : 30.28813916970849,
+                  "lng" : -81.65525078029151
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "EjUxNjAwIFBlbm5zeWx2YW5pYSBBdmVudWUsIEphY2tzb252aWxsZSwgRkwgMzIyMDcsIFVTQQ",
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "1600",
+               "short_name" : "1600",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Pennsylvania Avenue",
+               "short_name" : "Pennsylvania Ave",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Hilltop",
+               "short_name" : "Hilltop",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Wilmington",
+               "short_name" : "Wilmington",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "New Castle County",
+               "short_name" : "New Castle County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Delaware",
+               "short_name" : "DE",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "19806",
+               "short_name" : "19806",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "4048",
+               "short_name" : "4048",
+               "types" : [ "postal_code_suffix" ]
+            }
+         ],
+         "formatted_address" : "1600 Pennsylvania Avenue, Wilmington, DE 19806, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 39.753979,
+               "lng" : -75.563896
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 39.7553279802915,
+                  "lng" : -75.5625470197085
+               },
+               "southwest" : {
+                  "lat" : 39.7526300197085,
+                  "lng" : -75.56524498029151
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "ChIJ22X-Cg79xokR-lF_UnyfaKI",
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "1600",
+               "short_name" : "1600",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Pennsylvania Avenue",
+               "short_name" : "Pennsylvania Ave",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Oreland",
+               "short_name" : "Oreland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Springfield",
+               "short_name" : "Springfield",
+               "types" : [ "administrative_area_level_3", "political" ]
+            },
+            {
+               "long_name" : "Montgomery County",
+               "short_name" : "Montgomery County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Pennsylvania",
+               "short_name" : "PA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "19075",
+               "short_name" : "19075",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "1600 Pennsylvania Avenue, Oreland, PA 19075, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 40.12053909999999,
+                  "lng" : -75.1846803
+               },
+               "southwest" : {
+                  "lat" : 40.1205281,
+                  "lng" : -75.1846918
+               }
+            },
+            "location" : {
+               "lat" : 40.1205281,
+               "lng" : -75.1846918
+            },
+            "location_type" : "RANGE_INTERPOLATED",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.1218825802915,
+                  "lng" : -75.18333706970849
+               },
+               "southwest" : {
+                  "lat" : 40.1191846197085,
+                  "lng" : -75.18603503029151
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "EjAxNjAwIFBlbm5zeWx2YW5pYSBBdmVudWUsIE9yZWxhbmQsIFBBIDE5MDc1LCBVU0E",
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "1600",
+               "short_name" : "1600",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Pennsylvania Avenue",
+               "short_name" : "Pennsylvania Ave",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Upton",
+               "short_name" : "Upton",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Baltimore",
+               "short_name" : "Balt",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Maryland",
+               "short_name" : "MD",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "21217",
+               "short_name" : "21217",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "1600 Pennsylvania Avenue, Baltimore, MD 21217, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 39.30312869999999,
+                  "lng" : -76.634129
+               },
+               "southwest" : {
+                  "lat" : 39.3031188,
+                  "lng" : -76.63414229999999
+               }
+            },
+            "location" : {
+               "lat" : 39.3031188,
+               "lng" : -76.63414229999999
+            },
+            "location_type" : "RANGE_INTERPOLATED",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 39.3044727302915,
+                  "lng" : -76.63278666970848
+               },
+               "southwest" : {
+                  "lat" : 39.3017747697085,
+                  "lng" : -76.6354846302915
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "EjIxNjAwIFBlbm5zeWx2YW5pYSBBdmVudWUsIEJhbHRpbW9yZSwgTUQgMjEyMTcsIFVTQQ",
+         "types" : [ "street_address" ]
+      }
+   ],
+   "status" : "OK"
+}
