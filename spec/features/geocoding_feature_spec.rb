@@ -6,7 +6,7 @@ RSpec.describe 'Forecast feature', type: :feature do
     before do
       visit "/street_to_coords/new"
       fill_in "Street Address", with: @address
-      click "Lookup Coordinates"
+      click_button "Lookup Coordinates"
     end
 
     context 'Main Exercise' do

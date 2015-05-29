@@ -7,7 +7,7 @@ RSpec.describe 'Forecast feature', type: :feature do
       visit "/coords_to_weather/new"
       fill_in "Latitude", with: @lat
       fill_in "Longitude", with: @lng
-      click "Lookup Weather"
+      click_button "Lookup Weather"
     end
 
     context 'Main Exercise' do

@@ -6,7 +6,7 @@ RSpec.describe 'Forecast feature', type: :feature do
     before do
       visit "/street_to_weather/new"
       fill_in "Street Address", with: @address
-      click "Tell me the weather!"
+      click_button "Tell me the weather!"
     end
 
     context 'Main Exercise' do
