@@ -2,14 +2,14 @@
 
 ## Setup
 
- - **Fork** this repo to your own GitHub.com account.
- - Clone **your fork** to your own computer.
- - `cd` to the folder that you just downloaded.
+ - Clone this repository.
+ - **Create a branch for your work.**
+ - In Terminal, `cd` to the folder that you just downloaded.
  - `bundle install`
- - Open up the entire folder in Sublime.
+ - Open up the entire folder in Atom.
  - `rails s`
  - Go to [http://localhost:3000](http://localhost:3000) in Chrome.
- 
+
 ## Introduction
 
 In this project, you will practice working with Arrays and Hashes by pulling data from external services like Google Maps. You will build an application that, given a street address, tells the user the weather forecast.
@@ -48,7 +48,7 @@ The first example they give is
 
 (I have removed the part about the API key from the end of the URL; we don't need one, for now.) Paste that URL into a Chrome tab; you should see something like this:
 
-<img src='http://ask.initialversion.com/uploads/default/70/a1f0652613458d37.png' width="690" height="412"> 
+<img src='http://ask.initialversion.com/uploads/default/70/a1f0652613458d37.png' width="690" height="412">
 
 I folded away the `address_components` section to make the value of the `geometry` key stand out, since that is where our target lives: the `lat` and `lng` keys within the `location` hash. Notice that JSON uses curly braces for Hashes and square brackets for Arrays just like Ruby does.
 
@@ -58,7 +58,7 @@ Alright, now that we have the data we need showing up in the browser window, wha
 
 It turns out we need to replace the part of the URL between the `?address=` and the `&` with the address we want Geocoded, but with one catch: spaces are not legal in URLs, so we have to **encode** them. One way to encode them can be seen in Google's example, with `+`s, so the following works:
 
-<img src='http://ask.initialversion.com/uploads/default/71/38b10fea87e76ce9.png' width="690" height="412"> 
+<img src='http://ask.initialversion.com/uploads/default/71/38b10fea87e76ce9.png' width="690" height="412">
 
 ### Ruby
 
@@ -82,7 +82,7 @@ What just happened? We `open`ed the page at `url`, and the return value was the 
 
     raw_data = open(url).read
 
-<img src='http://ask.initialversion.com/uploads/default/73/e2072db64c77b1f6.png' width="690" height="411"> 
+<img src='http://ask.initialversion.com/uploads/default/73/e2072db64c77b1f6.png' width="690" height="411">
 
 Alright! We just used Ruby to open up a connection over the Internet to Google's servers, placed a request for them to translate our address into a latitude and longitude, and received a response! That's a big deal, folks. However, the response is hideous. How in the world are we going to pull out the latitude and longitude values from that thing?
 
@@ -139,13 +139,13 @@ I have started you off with three forms:
  - [Street &rarr; Coords](http://localhost:3000/street_to_coords/new)
  - [Coords &rarr; Weather](http://localhost:3000/coords_to_weather/new)
  - [Street &rarr; Weather](http://localhost:3000/street_to_weather/new)
- 
+
 And three actions which process these form inputs and render results:
 
  - `app/controllers/geocoding_controller.rb`
  - `app/controllers/forecast_controller.rb`
  - `app/controllers/meteorologist_controller.rb`
- 
+
 We'll be working on [Street &rarr; Coords](http://localhost:3000/street_to_coords/new) first.
 
 
@@ -157,10 +157,10 @@ If I type in `5807 S Woodlawn Ave` at the [Street &rarr; Coords form](http://loc
 <dl>
   <dt>Street Address</dt>
   <dd>5807 S Woodlawn Ave</dd>
-  
+
   <dt>Latitude</dt>
   <dd>41.7896234</dd>
-  
+
   <dt>Longitude</dt>
   <dd>-87.5964137</dd>
 </dl>
@@ -177,11 +177,11 @@ Step 1 when working with any API is research. What is the URL of the page that h
 
 Let's head over to [Forecast's API documentation][2]. First, we must register as developers:
 
-<img src='http://ask.initialversion.com/uploads/default/80/ae376d887782c8bb.png' width="690" height="412"> 
+<img src='http://ask.initialversion.com/uploads/default/80/ae376d887782c8bb.png' width="690" height="412">
 
 You need not provide a real email address, if you don't want to. Once you register, you will be given an example link with your own personal API key inserted in a variable path segment:
 
-<img src='http://ask.initialversion.com/uploads/default/81/80aa59c81d8cc53d.png' width="690" height="412"> 
+<img src='http://ask.initialversion.com/uploads/default/81/80aa59c81d8cc53d.png' width="690" height="412">
 
 #### Find an example
 
@@ -222,7 +222,7 @@ If I type in `41.78` and `-87.59` at the [Coords &rarr; Weather form](http://loc
 </dl>
 </blockquote>
 
-    
+
 ## Part 3: Address to Weather
 
 Finally, pull it all together in `app/controllers/meteorologist_controller.rb`. Use both the Google Geocoding API and the Forecast API so that if I type in `5807 S Woodlawn Ave` at the [Street &rarr; Weather form](http://localhost:3000/street_to_weather/new), I should see something like
