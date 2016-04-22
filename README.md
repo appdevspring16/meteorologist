@@ -250,7 +250,7 @@ Finally, pull it all together in `app/controllers/meteorologist_controller.rb`. 
 
 ## Submission
 
-Remember to commit and sync your work to **your fork** of the repository on GitHub.com often, so that it will be easy for me to see what's up if you need help. **And ask lots of questions!** Really. Ask early and often.
+Remember to commit and sync your work often, so that it will be easy for us to see what's up if you need help. Create a Pull Request when you are ready for feedback. **And ask lots of questions!** Really. Ask early and often.
 
 Good luck!
 
