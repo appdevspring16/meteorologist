@@ -9,6 +9,10 @@
  - Open up the entire folder in Atom.
  - `rails s`
  - Go to [http://localhost:3000](http://localhost:3000) in Chrome.
+ 
+## Getting Started video
+
+You'll find a very brief Getting Started video for this project in Canvas under **Pages**. You should still read this README thoroughly.
 
 ## Introduction
 
