@@ -19,9 +19,9 @@ class MeteorologistController < ApplicationController
 
 
 
-    @current_temperature = "Replace this string with your answer."
+    @current_temperature = parsed_data["currently"]["temperature"]
 
-    @current_summary = "Replace this string with your answer."
+    @current_summary = parsed_data["currently"]["summary"]
 
     @summary_of_next_sixty_minutes = "Replace this string with your answer."
 
