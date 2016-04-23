@@ -15,7 +15,7 @@ class ForecastController < ApplicationController
     # The latitude the user input is in the string @lat.
     # The longitude the user input is in the string @lng.
     # ==========================================================================
-
+    @url = "https://api.forecast.io/forecast/b017b8681d1e5eb49ed3a732096dc505/" + @lat + "," + @lng
 
 
     @current_temperature = "Replace this string with your answer."
