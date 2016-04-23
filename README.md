@@ -52,8 +52,6 @@ The first example they give is
 
 I folded away the `address_components` section to make the value of the `geometry` key stand out, since that is where our target lives: the `lat` and `lng` keys within the `location` hash. Notice that JSON uses curly braces for Hashes and square brackets for Arrays just like Ruby does.
 
-Also notice that when I hover my mouse over the `lat` value, the JSONView extension puts a hint about the path to get down to it starting all the way from the top in the status bar at the bottom-left of the browser window. That path is in JavaScript notation, but it's analagous to the Ruby we're going to eventually need.
-
 Alright, now that we have the data we need showing up in the browser window, what's next? First of all, we should be sure that we can customize this example request to get data that we care about. So how would we get the coordinates of "the corner of Foster and Sheridan"? Give it a try.
 
 It turns out we need to replace the part of the URL between the `?address=` and the `&` with the address we want Geocoded, but with one catch: spaces are not legal in URLs, so we have to **encode** them. One way to encode them can be seen in Google's example, with `+`s, so the following works:
