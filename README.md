@@ -1,4 +1,4 @@
-# Meteorologist - slight change
+# Meteorologist
 
 ## Setup
 
