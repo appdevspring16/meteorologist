@@ -17,17 +17,29 @@ class MeteorologistController < ApplicationController
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
 
+# Converting address to lat/long so dark sky can read it (using google API)
+    url_safe_street_address = URI.encode(@street_address)
+    url_safe_full = "http://maps.googleapis.com/maps/api/geocode/json?address=#{url_safe_street_address}"
+    parsed_data = JSON.parse(open(url_safe_full).read)
 
+    latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
 
-    @current_temperature = "Replace this string with your answer."
+    longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
 
-    @current_summary = "Replace this string with your answer."
+# Now I'm using the coords from the google api data and using dark sky API to get weather for the location
+    url_for_dark_sky= "https://api.forecast.io/forecast/e308f111cdb2db5d0a337db32f008c75/#{latitude},#{longitude}"
+    parsed_data = JSON.parse(open(url_for_dark_sky).read)
 
-    @summary_of_next_sixty_minutes = "Replace this string with your answer."
+    @current_temperature = parsed_data["currently"]["temperature"]
 
-    @summary_of_next_several_hours = "Replace this string with your answer."
+    @current_summary =
+    parsed_data["currently"]["summary"]
 
-    @summary_of_next_several_days = "Replace this string with your answer."
+    @summary_of_next_sixty_minutes = parsed_data["minutely"]["summary"]
+
+    @summary_of_next_several_hours = parsed_data["hourly"]["summary"]
+
+    @summary_of_next_several_days = parsed_data["daily"]["summary"]
 
     render("street_to_weather.html.erb")
   end
