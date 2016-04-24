@@ -18,7 +18,7 @@ class ForecastController < ApplicationController
     # ==========================================================================
     ds_api = "https://api.forecast.io/forecast/"
     api_key = "3b8fdec05259d0f35ae3b0fe32d31cc2"
-    loc = "/" + @lat + "," + @lng
+    loc = "/#{@lat},#{@lng}"
     ds_url = ds_loc + api_key + loc
 
     raw_data = open(ds_url).read

@@ -30,8 +30,8 @@ class MeteorologistController < ApplicationController
 
     ds_api = "https://api.forecast.io/forecast/"
     api_key = "3b8fdec05259d0f35ae3b0fe32d31cc2"
-    loc = "/" + lat + "," + lng
-    ds_url = ds_loc + api_key + loc
+    ds_loc = "/#{lat},#{lng}"
+    ds_url = ds_api + api_key + ds_loc
 
     raw_ds_data = open(ds_url).read
     parsed_ds_data = JSON.parse(raw_ds_data)
@@ -45,7 +45,7 @@ class MeteorologistController < ApplicationController
     @summary_of_next_several_hours = parsed_ds_data["hourly"]["summary"]
 
     @summary_of_next_several_days = parsed_ds_data["daily"]["summary"]
-    
+
     render("street_to_weather.html.erb")
   end
 end
