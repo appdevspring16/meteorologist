@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'json'
 
 class ForecastController < ApplicationController
   def coords_to_weather_form
@@ -15,18 +16,23 @@ class ForecastController < ApplicationController
     # The latitude the user input is in the string @lat.
     # The longitude the user input is in the string @lng.
     # ==========================================================================
+    ds_api = "https://api.forecast.io/forecast/"
+    api_key = "3b8fdec05259d0f35ae3b0fe32d31cc2"
+    loc = "/" + @lat + "," + @lng
+    ds_url = ds_loc + api_key + loc
 
+    raw_data = open(ds_url).read
+    parsed_data = JSON.parse(raw_data)
 
+    @current_temperature = parsed_data["currently"]["temperature"]
 
-    @current_temperature = "Replace this string with your answer."
+    @current_summary = parsed_data["currently"]["summary"]
 
-    @current_summary = "Replace this string with your answer."
+    @summary_of_next_sixty_minutes = parsed_data["minutely"]["summary"]
 
-    @summary_of_next_sixty_minutes = "Replace this string with your answer."
+    @summary_of_next_several_hours = parsed_data["hourly"]["summary"]
 
-    @summary_of_next_several_hours = "Replace this string with your answer."
-
-    @summary_of_next_several_days = "Replace this string with your answer."
+    @summary_of_next_several_days = parsed_data["daily"]["summary"]
 
     render("coords_to_weather.html.erb")
   end
