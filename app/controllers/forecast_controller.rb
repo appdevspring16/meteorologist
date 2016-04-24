@@ -15,7 +15,7 @@ class ForecastController < ApplicationController
     # The latitude the user input is in the string @lat.
     # The longitude the user input is in the string @lng.
     # ==========================================================================
-    url = 'https://api.forecast.io/forecast/ef03e0e63c842a7e051dee20d9041d85/' + @lat + ","+@lng
+    url = 'https://api.forecast.io/forecast/ef03e0e63c842a7e051dee20d9041d85/' + "#{@latitude}"+","+"#{@longitude}"
     raw_data = open(url).read
     parsed_data = JSON.parse(raw_data)
 
