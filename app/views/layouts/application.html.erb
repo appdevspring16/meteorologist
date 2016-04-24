@@ -16,13 +16,27 @@
 
 <body>
 
-<nav>
-  <ul>
-    <li><a href="/street_to_coords/new">Street &rarr; Coords</a></li>
-    <li><a href="/coords_to_weather/new">Coords &rarr; Weather</a></li>
-    <li><a href="/street_to_weather/new">Street &rarr; Weather</a></li>
-  </ul>
-</nav>
+  <div class="navbar-fixed-top text-center">
+
+    <nav>
+      <div class="row col-lg-4">
+        <h1><a href="/street_to_coords/new">Street &rarr; Coords</a></h1>
+        </div>
+      <div class="row col-lg-4">
+        <h1><a href="/coords_to_weather/new">Coords &rarr; Weather</a></h1>
+        </div>
+      <div class="row col-lg-4">
+        <h1><a href="/street_to_weather/new">Street &rarr; Weather</a></h1>
+        </div>
+      </nav>
+
+    </div>
+
+
+<div class="space">
+</div>
+
+</div>
 
 <%= yield %>
 

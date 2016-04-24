@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.space {
+  height: 80px;
+  background-color: rgb(128, 229, 255);
+}
