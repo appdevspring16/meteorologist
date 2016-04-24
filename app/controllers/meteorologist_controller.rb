@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'json'
 
 class MeteorologistController < ApplicationController
   def street_to_weather_form
@@ -16,18 +17,34 @@ class MeteorologistController < ApplicationController
     # A URL-safe version of the street address, with spaces and other illegal
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
+    geocode_string = "https://maps.googleapis.com/maps/api/geocode/json?address="
+    geo_url = geocode_string + url_safe_street_address
 
+    raw_geo_data = open(geo_url).read
+    parsed_geo_data = JSON.parse(raw_geo_data)
+    geo_results = parsed_geo_data["results"]
+    geo_first = geo_results[0]
 
+    lat = geo_first["geometry"]["location"]["lat"]
+    lng = geo_first["geometry"]["location"]["lng"]
 
-    @current_temperature = "Replace this string with your answer."
+    ds_api = "https://api.forecast.io/forecast/"
+    api_key = "3b8fdec05259d0f35ae3b0fe32d31cc2"
+    ds_loc = "/#{lat},#{lng}"
+    ds_url = ds_api + api_key + ds_loc
 
-    @current_summary = "Replace this string with your answer."
+    raw_ds_data = open(ds_url).read
+    parsed_ds_data = JSON.parse(raw_ds_data)
 
-    @summary_of_next_sixty_minutes = "Replace this string with your answer."
+    @current_temperature = parsed_ds_data["currently"]["temperature"]
 
-    @summary_of_next_several_hours = "Replace this string with your answer."
+    @current_summary = parsed_ds_data["currently"]["summary"]
 
-    @summary_of_next_several_days = "Replace this string with your answer."
+    @summary_of_next_sixty_minutes = parsed_ds_data["minutely"]["summary"]
+
+    @summary_of_next_several_hours = parsed_ds_data["hourly"]["summary"]
+
+    @summary_of_next_several_days = parsed_ds_data["daily"]["summary"]
 
     render("street_to_weather.html.erb")
   end
