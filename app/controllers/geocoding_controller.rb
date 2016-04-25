@@ -16,7 +16,6 @@ class GeocodingController < ApplicationController
     # A URL-safe version of the street address, with spaces and other illegal
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
-    require 'open-uri'
 
     url = "http://maps.googleapis.com/maps/api/geocode/json?address=#{url_safe_street_address}"
     open(url)
