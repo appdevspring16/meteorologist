@@ -10,3 +10,39 @@
   <dt>Longitude</dt>
   <dd><%= @longitude %></dd>
 </dl>
+
+<div id="map" class="map"></div>
+<script>
+var map;
+function initMap() {
+  var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: <%= @latitude %>, lng: <%= @longitude %>},
+    zoom: 16
+  });
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+
+  var contentString = '<div id="content">'+
+  '<div id="siteNotice">'+
+  '</div>'+
+  // '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+  '<div id="bodyContent">'+
+  '<p><%= @street_address %>'+
+  '</div>'
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+
+
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9xd823iNagW1Odi6OI78Vcn-fhV-_wQc&callback=initMap"
+async defer></script>

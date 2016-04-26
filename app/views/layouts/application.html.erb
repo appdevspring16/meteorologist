@@ -5,18 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="/assets/stylesheets/bootstrap.css" media="screen" title="no title" charset="utf-8">
+
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <!-- <img alt="Brand" src="..."> -->
+          Meteorologist Exercise
+        </a>
+      </div>
+    </div>
+  </nav>
+  <nav>
+    <ul>
+      <li><a href="/street_to_coords/new">Street &rarr; Coords</a></li>
+      <li><a href="/coords_to_weather/new">Coords &rarr; Weather</a></li>
+      <li><a href="/street_to_weather/new">Street &rarr; Weather</a></li>
+    </ul>
+  </nav>
 
-<nav>
-  <ul>
-    <li><a href="/street_to_coords/new">Street &rarr; Coords</a></li>
-    <li><a href="/coords_to_weather/new">Coords &rarr; Weather</a></li>
-    <li><a href="/street_to_weather/new">Street &rarr; Weather</a></li>
-  </ul>
-</nav>
-
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
