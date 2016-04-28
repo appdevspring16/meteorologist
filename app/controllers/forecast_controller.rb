@@ -37,6 +37,7 @@ daily = parsed_data["daily"]
 
     @summary_of_next_several_days = daily["summary"]
 
+
     render("coords_to_weather.html.erb")
   end
 end

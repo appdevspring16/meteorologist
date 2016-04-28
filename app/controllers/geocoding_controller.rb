@@ -30,6 +30,7 @@ class GeocodingController < ApplicationController
 
     @longitude = location["lng"]
 
+
     render("street_to_coords.html.erb")
   end
 end

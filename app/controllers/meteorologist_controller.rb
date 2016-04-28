@@ -46,6 +46,9 @@ class MeteorologistController < ApplicationController
 
       @summary_of_next_several_days = daily["summary"]
 
+
+
+
     render("street_to_weather.html.erb")
   end
 end
