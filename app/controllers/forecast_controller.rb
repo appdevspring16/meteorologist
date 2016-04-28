@@ -16,7 +16,6 @@ class ForecastController < ApplicationController
     # The longitude the user input is in the string @lng.
     # ==========================================================================
 
-    require 'open-uri'
 
     url="https://api.forecast.io/forecast/34684b2b68fc3cc7a434a8629c2c9c53/#{@lat},#{@lng}"
 
