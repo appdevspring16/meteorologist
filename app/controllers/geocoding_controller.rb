@@ -17,17 +17,23 @@ class GeocodingController < ApplicationController
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
 
-  require 'JSON'
-
+  
   url_geo = "http://maps.googleapis.com/maps/api/geocode/json?address=" + url_safe_street_address
+  open(url_geo)
+  raw_data = open(url_geo).read
+
+  require 'JSON'
+  
 
   parsed_data=JSON.parse(open(url_geo).read)
+  latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
+  longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
 
-    @latitude = parsed_data["result"][0]["geometry"]["location"]["lat"]
+    @latitude = latitude
 
-    @longitude = parsed_data["result"][0]["geometry"]["location"]["lat"]
+    @longitude = longitude
 
-    
+
 
     render("street_to_coords.html.erb")
   end
