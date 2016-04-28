@@ -1,0 +1,84 @@
+
+
+
+/* My standard vertical spacing classes */
+
+.padding-inside-top-xs {
+  padding-top: 10px;
+}
+
+
+.padding-inside-top-sm {
+  padding-top: 20px;
+}
+
+.padding-inside-top-md {
+  padding-top: 50px;
+}
+
+.padding-inside-top-lg {
+  padding-top: 150px;
+}
+
+.padding-inside-top-xl {
+  padding-top: 200px;
+}
+
+.padding-inside-bottom-xs {
+  padding-bottom: 10px;
+}
+
+.padding-inside-bottom-sm {
+  padding-bottom: 20px;
+}
+
+.padding-inside-bottom-md {
+  padding-bottom: 50px;
+}
+
+.padding-inside-bottom-lg {
+  padding-bottom: 150px;
+}
+
+.padding-inside-bottom-xl {
+  padding-bottom: 200px;
+}
+
+.margin-above-top-xs {
+  margin-top: 10px;
+}
+
+.margin-above-top-sm {
+  margin-top: 20px;
+}
+
+.margin-above-top-md {
+  margin-top: 50px;
+}
+
+.margin-above-top-lg {
+  margin-top: 150px;
+}
+
+.margin-below-bottom-xs {
+  margin-bottom: 10px;
+}
+.margin-below-bottom-sm {
+  margin-bottom: 20px;
+}
+
+.margin-below-bottom-md {
+  margin-bottom: 50px;
+}
+
+.margin-below-bottom-lg {
+  margin-bottom: 150px;
+}
+
+.margin-below-bottom-xl {
+  margin-bottom: 200px;
+}
+
+.padding-inside-left-sm{padding-left:30px}
+
+.padding-inside-left-md{padding-left:50px}

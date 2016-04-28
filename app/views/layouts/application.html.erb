@@ -12,6 +12,9 @@
   <!-- Connect to Font Awesome CSS -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+  <!-- Connect to Own CSS -->
+  <link rel="stylesheet" href="assets/stylesheets/additional_style.css">
+
   <!-- Connect to Bootstrap Javascript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
@@ -39,8 +42,9 @@
   </nav>
 
 
-  <div class="container-fluid">
-      <div class="row choice">
+  <div class="container-fluid margin-above-top-md">
+
+          <div class="row choice">
           <div class="col-lg-offset-1 col-lg-6">  <ul class="nav nav-pills nav-stacked">
 
               <li role="presentation" class="active"><a href="/street_to_coords/new">Street &rarr; Coords</a></li>
@@ -49,7 +53,7 @@
 
           </ul></div>
       </div>
-      <div class="row">
+      <div class="row margin-above-top-md">
           <div class="col-lg-offset-1 col-lg-9"><%= yield %></div>
       </div>
   </div>

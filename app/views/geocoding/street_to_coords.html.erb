@@ -1,12 +1,45 @@
-<h1>Street &rarr; Coords Results</h1>
+<h2 class="my">Street &rarr; Coords Results</h2>
 
-<dl>
-  <dt>Street Address</dt>
-  <dd><%= @street_address %></dd>
+<div class="container-fluid">
+    <div class="row address margin-above-top-md">
+        <div class="col-lg-6">
 
-  <dt>Latitude</dt>
-  <dd><%= @latitude %></dd>
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Street Address</h3>
+            </div>
+            <div class="panel-body">
+            <%= @street_address %>
+            </div>
+          </div>
 
-  <dt>Longitude</dt>
-  <dd><%= @longitude %></dd>
-</dl>
+
+      </div>
+    </div>
+    <div class="row long">
+        <div class="col-lg-6">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Latitude</h3>
+            </div>
+            <div class="panel-body">
+          <%= @latitude %>
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+    <div class="row lat">
+        <div class="col-lg-6">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">longitude</h3>
+            </div>
+            <div class="panel-body">
+          <%= @longitude %>
+            </div>
+          </div>
+</div>
+    </div>
+</div>
