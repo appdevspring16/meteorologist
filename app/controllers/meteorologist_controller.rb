@@ -30,6 +30,8 @@ class MeteorologistController < ApplicationController
 
         parsed_data_hour = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+3600}").read)
 
+        parsed_data_14 = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+1209600}").read)
+
 
             @current_temperature = parsed_data_current["currently"]["temperature"]
 
@@ -40,6 +42,8 @@ class MeteorologistController < ApplicationController
             @summary_of_next_several_hours = parsed_data_current["hourly"]["summary"]
 
             @summary_of_next_several_days = parsed_data_current["daily"]["summary"]
+
+            @summary_of_next_14_days = parsed_data_14["currently"]["summary"]
 
 
 
