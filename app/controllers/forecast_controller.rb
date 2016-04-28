@@ -20,6 +20,7 @@ class ForecastController < ApplicationController
     url = "https://api.forecast.io/forecast/5b47037d8ede8f15c6b54ca801e12407/" + @lat + "," + @lng
     raw_data = open(url).read
 
+    
     #parsed_data is a hash
     parsed_data = JSON.parse(raw_data)
 
