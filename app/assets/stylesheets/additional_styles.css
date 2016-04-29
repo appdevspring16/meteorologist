@@ -1,6 +1,13 @@
+#map {height:375px; width:525px}
 
-
-
+#map-container {
+   text-align: center;height: 400px; width: 550px;
+   border-radius: 16px 16px;
+   border-color: #fff;
+   border-style: solid;
+   box-shadow: 2px 2px 10px #B1B1B1;
+  
+   border-width: 7px;
 /* My standard vertical spacing classes */
 
 .padding-inside-top-xs {

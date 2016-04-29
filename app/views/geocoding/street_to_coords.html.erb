@@ -1,45 +1,63 @@
+
+
 <h2 class="my">Street &rarr; Coords Results</h2>
 
 <div class="container-fluid">
-    <div class="row address margin-above-top-md">
-        <div class="col-lg-6">
+  <div class="row address margin-above-top-md">
+    <div class="col-lg-6">
 
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Street Address</h3>
-            </div>
-            <div class="panel-body">
-            <%= @street_address %>
-            </div>
-          </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Street Address</h3>
+        </div>
+        <div class="panel-body">
+          <%= @street_address %>
+        </div>
+      </div>
+
+<hr>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Latitude</h3>
+        </div>
+        <div class="panel-body">
+          <%= @latitude %>
+        </div>
+      </div>
 
 
+  <hr>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">longitude</h3>
+        </div>
+        <div class="panel-body">
+          <%= @longitude %>
+        </div>
       </div>
     </div>
-    <div class="row long">
-        <div class="col-lg-6">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Latitude</h3>
-            </div>
-            <div class="panel-body">
-          <%= @latitude %>
-            </div>
-          </div>
 
+<div class="col-lg-6">
+  <div id="map-container">
+    <div id="map"></div>
+ <script>
+ function initMap() {
+     var map = new google.maps.Map(document.getElementById('map'), {
+       zoom: 4,
+       center: {lat: -33, lng: 151}
+     });
 
-        </div>
-    </div>
-    <div class="row lat">
-        <div class="col-lg-6">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">longitude</h3>
-            </div>
-            <div class="panel-body">
-          <%= @longitude %>
-            </div>
-          </div>
+     var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+     var beachMarker = new google.maps.Marker({
+       position: {lat: -33.890, lng: 151.274},
+       map: map,
+       icon: image
+     });
+   }
+ </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsEL9sAkCdZ1GRsW1QPUsUDnY7B0ncTuI&callback=initMap"
+ async defer></script>
 </div>
-    </div>
 </div>
+  </div>
+  </div>

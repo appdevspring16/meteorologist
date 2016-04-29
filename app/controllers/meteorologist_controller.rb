@@ -30,7 +30,7 @@ class MeteorologistController < ApplicationController
 
         parsed_data_hour = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+3600}").read)
 
-        parsed_data_14 = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+1209600}").read)
+        parsed_data_tomorrow = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+86400}").read)
 
 
             @current_temperature = parsed_data_current["currently"]["temperature"]
@@ -43,8 +43,12 @@ class MeteorologistController < ApplicationController
 
             @summary_of_next_several_days = parsed_data_current["daily"]["summary"]
 
-            @summary_of_next_14_days = parsed_data_14["currently"]["summary"]
-
+            x = 2
+            sum = [parsed_data_tomorrow["currently"]["summary"]]
+            while x < 15
+              @summary_of_next_14_days = sum.push(JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+x*86400}").read)["currently"]["summary"])
+              x = x +1
+                  end
 
 
     render("street_to_weather.html.erb")
