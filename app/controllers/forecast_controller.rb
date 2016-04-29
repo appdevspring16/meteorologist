@@ -17,7 +17,7 @@ class ForecastController < ApplicationController
     # ==========================================================================
 
 
-    url="https://api.forecast.io/forecast/3dba79de7f37f0d288724ed8f23a626c/"+@lat+@lng
+    url="https://api.forecast.io/forecast/3dba79de7f37f0d288724ed8f23a626c/"+@lat+","+@lng
     parsed_data = JSON.parse(open(url).read)
 
 
