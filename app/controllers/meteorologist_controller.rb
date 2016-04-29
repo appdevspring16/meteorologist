@@ -16,18 +16,40 @@ class MeteorologistController < ApplicationController
     # A URL-safe version of the street address, with spaces and other illegal
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
+    completed_url = "https://maps.googleapis.com/maps/api/geocode/json?&address=#{url_safe_street_address}"
+    parsed_data = JSON.parse(open(completed_url).read)
+
+        @latitude =parsed_data["results"][0]["geometry"]["location"]["lat"]
+
+        @longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
 
 
+        current_time = Time.current.to_i
 
-    @current_temperature = "Replace this string with your answer."
+        parsed_data_current = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude}").read)
 
-    @current_summary = "Replace this string with your answer."
+        parsed_data_hour = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+3600}").read)
 
-    @summary_of_next_sixty_minutes = "Replace this string with your answer."
+        parsed_data_tomorrow = JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+86400}").read)
 
-    @summary_of_next_several_hours = "Replace this string with your answer."
 
-    @summary_of_next_several_days = "Replace this string with your answer."
+            @current_temperature = parsed_data_current["currently"]["temperature"]
+
+            @current_summary = parsed_data_current["currently"]["summary"]
+
+            @summary_of_next_sixty_minutes = parsed_data_hour["currently"]["summary"]
+
+            @summary_of_next_several_hours = parsed_data_current["hourly"]["summary"]
+
+            @summary_of_next_several_days = parsed_data_current["daily"]["summary"]
+
+            x = 2
+            sum = [parsed_data_tomorrow["currently"]["summary"]]
+            while x < 15
+              @summary_of_next_14_days = sum.push(JSON.parse(open("https://api.forecast.io/forecast/490fb662acbfe54e362a09de357d59ac/#{@latitude},#{@longitude},#{current_time+x*86400}").read)["currently"]["summary"])
+              x = x +1
+                  end
+
 
     render("street_to_weather.html.erb")
   end
