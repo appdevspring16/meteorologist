@@ -1,28 +1,117 @@
-<h1>Coords &rarr; Weather Results</h1>
+<h2 class="my">Coords &rarr; Weather Results</h2>
 
-<dl>
-  <dt>Latitude</dt>
-  <dd><%= @lat %></dd>
+<div class="container-fluid">
+  <div class="row address margin-above-top-md">
+    <div class="col-lg-6">
 
-  <dt>Longitude</dt>
-  <dd><%= @lng %></dd>
+          <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Latitude</h3>
+        </div>
+        <div class="panel-body">
+          <%= @lat %>
+        </div>
+      </div>
 
-  <dt>Current Temperature</dt>
-  <dd><%= @current_temperature %></dd>
 
-  <dt>Current Summary</dt>
-  <dd><%= @current_summary %></dd>
+      <hr>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">longitude</h3>
+        </div>
+        <div class="panel-body">
+          <%= @lng %>
+        </div>
+      </div>
 
-  <dt>Outlook for next sixty minutes</dt>
-  <dd><%= @summary_of_next_sixty_minutes %></dd>
 
-  <dt>Outlook for next several hours</dt>
-  <dd><%= @summary_of_next_several_hours %></dd>
+    <hr>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">Current Temperature</h3>
+      </div>
+      <div class="panel-body">
+        <%= @current_temperature %>
+      </div>
+    </div>
 
-  <dt>Outlook for next several days</dt>
-  <dd><%= @summary_of_next_several_days %></dd>
 
-  <dt>Outlook for next 14 days</dt>
-  <dd><%= @summary_of_next_14_days %></dd>
+  <hr>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">Current Summary</h3>
+    </div>
+    <div class="panel-body">
+      <%= @current_summary %>
+    </div>
+  </div>
 
-</dl>
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next several hours</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_sixty_minutes %>
+  </div>
+</div>
+
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next several hours</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_several_hours %>
+  </div>
+</div>
+
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next several days</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_several_days %>
+  </div>
+</div>
+
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next 14 days</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_14_days %>
+  </div>
+</div>
+</div>
+
+<div class="col-lg-6">
+  <div id="map-container">
+    <div id="map"></div>
+    <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: <%= @lat %>, lng: <%= @lng %> }
+      });
+
+      var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      var beachMarker = new google.maps.Marker({
+        position: {lat: <%= @lat %>, lng: <%= @lng %>},
+        map: map,
+        icon: image
+      });
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsEL9sAkCdZ1GRsW1QPUsUDnY7B0ncTuI&callback=initMap"
+    async defer></script>
+  </div>
+</div>
+</div>
+</div>

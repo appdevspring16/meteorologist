@@ -1,6 +1,137 @@
+<h2 class="my">Meteorologist</h2>
+
+<div class="container-fluid">
+  <div class="row address margin-above-top-md">
+    <div class="col-lg-6">
+
+      <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">Here is the outlook for</h3>
+    </div>
+    <div class="panel-body">
+      <%= @street_address %>
+    </div>
+  </div>
+
+          <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Latitude</h3>
+        </div>
+        <div class="panel-body">
+          <%= @latitude %>
+        </div>
+      </div>
+
+
+      <hr>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">longitude</h3>
+        </div>
+        <div class="panel-body">
+          <%= @longitude %>
+        </div>
+      </div>
+
+
+    <hr>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">Current Temperature</h3>
+      </div>
+      <div class="panel-body">
+        <%= @current_temperature %>
+      </div>
+    </div>
+
+
+  <hr>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">Current Summary</h3>
+    </div>
+    <div class="panel-body">
+      <%= @current_summary %>
+    </div>
+  </div>
+
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next several hours</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_sixty_minutes %>
+  </div>
+</div>
+
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next several hours</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_several_hours %>
+  </div>
+</div>
+
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next several days</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_several_days %>
+  </div>
+</div>
+
+
+<hr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Outlook for next 14 days</h3>
+  </div>
+  <div class="panel-body">
+    <%= @summary_of_next_14_days %>
+  </div>
+</div>
+</div>
+
+<div class="col-lg-6">
+  <div id="map-container">
+    <div id="map"></div>
+    <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: <%= @latitude %>, lng: <%= @longitude %> }
+      });
+
+      var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      var beachMarker = new google.maps.Marker({
+        position: {lat: <%= @latitude %>, lng: <%= @longitude %>},
+        map: map,
+        icon: image
+      });
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsEL9sAkCdZ1GRsW1QPUsUDnY7B0ncTuI&callback=initMap"
+    async defer></script>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
 <h1>Meteorologist</h1>
 
-<p>Here's the outlook for <%= @street_address %>:</p>
+<p>Here's the outlook for :</p>
 
 <dl>
   <dt>Current Temperature</dt>
