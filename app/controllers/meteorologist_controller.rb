@@ -33,13 +33,7 @@ class MeteorologistController < ApplicationController
 
     @longitude = longitude
 
-end
-
- def coords_to_weather
-    @latitude = params[:user_latitude]
-    @longitude = params[:user_longitude]
-
-    url_weather = "https://api.forecast.io/forecast/99d2772da2b9b8a20e13f1fbad2406c6/" + @latitude + "," + @longitude + "#"
+    url_weather = "https://api.forecast.io/forecast/99d2772da2b9b8a20e13f1fbad2406c6/" + @latitude.to_s + "," + @longitude.to_s + "#"
 
 
 
