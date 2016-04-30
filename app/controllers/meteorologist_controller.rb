@@ -17,9 +17,34 @@ class MeteorologistController < ApplicationController
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
 
+  url_street_weather = "http://maps.googleapis.com/maps/api/geocode/json?address=" + url_safe_street_address
+
+  open(url_street_weather)
+  raw_data = open(url_street_weather).read
+
+  require 'JSON'
+  
+
+  parsed_data=JSON.parse(open(url_street_weather).read)
+  latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
+  longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
+
+    @latitude = latitude
+
+    @longitude = longitude
+
+end
+
+ def coords_to_weather
+    @latitude = params[:user_latitude]
+    @longitude = params[:user_longitude]
+
+    url_weather = "https://api.forecast.io/forecast/99d2772da2b9b8a20e13f1fbad2406c6/" + @latitude + "," + @longitude + "#"
 
 
-    @current_temperature = "Replace this string with your answer."
+
+
+    @current_temperature = "#{@current_temperature}"
 
     @current_summary = "Replace this string with your answer."
 
