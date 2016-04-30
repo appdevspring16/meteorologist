@@ -11,6 +11,7 @@ class GeocodingController < ApplicationController
     url_safe_street_address = URI.encode(@street_address)
 
     # ==========================================================================
+    # STARt with require uri??? 
     # Your code goes below.
     # The street address the user input is in the string @street_address.
     # A URL-safe version of the street address, with spaces and other illegal
