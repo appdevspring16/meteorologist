@@ -9,7 +9,6 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-
 body {
   margin: 0;
 }
@@ -1305,10 +1304,6 @@ p {
 small,
 .small {
   font-size: 85%;
-}
-#map {
-  height: 400px;
-  width: 400px;
 }
 mark,
 .mark {
@@ -6761,5 +6756,11 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+#map {
+  height: 400px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=bootstrap.css.map */

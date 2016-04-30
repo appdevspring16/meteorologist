@@ -1,24 +1,33 @@
-<h1>Coords &rarr; Weather Results</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 text-center">
+      <h1>Coords &rarr; Weather Results</h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 text-center">
+      <dl>
+        <dt>Latitude</dt>
+        <dd><%= @lat %></dd>
 
-<dl>
-  <dt>Latitude</dt>
-  <dd><%= @lat %></dd>
+        <dt>Longitude</dt>
+        <dd><%= @lng %></dd>
 
-  <dt>Longitude</dt>
-  <dd><%= @lng %></dd>
+        <dt>Current Temperature</dt>
+        <dd><%= @current_temperature %></dd>
 
-  <dt>Current Temperature</dt>
-  <dd><%= @current_temperature %></dd>
+        <dt>Current Summary</dt>
+        <dd><%= @current_summary %></dd>
 
-  <dt>Current Summary</dt>
-  <dd><%= @current_summary %></dd>
+        <dt>Outlook for next sixty minutes</dt>
+        <dd><%= @summary_of_next_sixty_minutes %></dd>
 
-  <dt>Outlook for next sixty minutes</dt>
-  <dd><%= @summary_of_next_sixty_minutes %></dd>
+        <dt>Outlook for next several hours</dt>
+        <dd><%= @summary_of_next_several_hours %></dd>
 
-  <dt>Outlook for next several hours</dt>
-  <dd><%= @summary_of_next_several_hours %></dd>
-
-  <dt>Outlook for next several days</dt>
-  <dd><%= @summary_of_next_several_days %></dd>
-</dl>
+        <dt>Outlook for next several days</dt>
+        <dd><%= @summary_of_next_several_days %></dd>
+      </dl>
+    </div>
+  </div>
