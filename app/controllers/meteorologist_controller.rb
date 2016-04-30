@@ -17,17 +17,52 @@ class MeteorologistController < ApplicationController
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
 
+  url_street_weather = "http://maps.googleapis.com/maps/api/geocode/json?address=" + url_safe_street_address
+
+  open(url_street_weather)
+  raw_data = open(url_street_weather).read
+
+  require 'JSON'
+  
+
+  parsed_data=JSON.parse(open(url_street_weather).read)
+  latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
+  longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
+
+    @latitude = latitude
+
+    @longitude = longitude
+
+    url_weather = "https://api.forecast.io/forecast/99d2772da2b9b8a20e13f1fbad2406c6/" + @latitude.to_s + "," + @longitude.to_s + "#"
+
+     open(url_weather)
+
+  weather_data = open(url_weather).read
+
+  parsed_weather_data = JSON.parse(open(url_weather).read)
+  
+  current_temperature = parsed_weather_data["currently"]["temperature"]
+
+  current_summary = parsed_weather_data["currently"]["summary"]
+
+  summary_of_next_sixty_minutes = parsed_weather_data["minutely"]["summary"]
+
+  summary_of_next_several_hours = parsed_weather_data["hourly"]["summary"]
+
+  summary_of_next_several_days = parsed_weather_data["daily"]["summary"]
 
 
-    @current_temperature = "Replace this string with your answer."
 
-    @current_summary = "Replace this string with your answer."
 
-    @summary_of_next_sixty_minutes = "Replace this string with your answer."
+    @current_temperature = current_temperature
 
-    @summary_of_next_several_hours = "Replace this string with your answer."
+    @current_summary = current_summary
 
-    @summary_of_next_several_days = "Replace this string with your answer."
+    @summary_of_next_sixty_minutes = summary_of_next_sixty_minutes
+
+    @summary_of_next_several_hours = summary_of_next_several_hours
+
+    @summary_of_next_several_days = summary_of_next_several_days
 
     render("street_to_weather.html.erb")
   end
