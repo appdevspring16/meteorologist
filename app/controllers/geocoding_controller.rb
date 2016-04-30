@@ -17,15 +17,15 @@ class GeocodingController < ApplicationController
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
 
-# url='http://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA'
+    # url='http://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA'
 
-url='url_safe_street_address'
-open(url)
-raw_data = open(url).read
-require 'json'
-parsed_data = JSON.parse(raw_data)
-@latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
-@longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
+    url="http://maps.googleapis.com/maps/api/geocode/json?address="+ url_safe_street_address
+    open(url)
+    raw_data = open(url).read
+    require 'json'
+    parsed_data = JSON.parse(raw_data)
+    @latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
+    @longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
 
 
     # @latitude = "Replace this string with your answer."
