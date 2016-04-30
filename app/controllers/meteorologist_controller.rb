@@ -35,18 +35,34 @@ class MeteorologistController < ApplicationController
 
     url_weather = "https://api.forecast.io/forecast/99d2772da2b9b8a20e13f1fbad2406c6/" + @latitude.to_s + "," + @longitude.to_s + "#"
 
+     open(url_weather)
+
+  weather_data = open(url_weather).read
+
+  parsed_weather_data = JSON.parse(open(url_weather).read)
+  
+  current_temperature = parsed_weather_data["currently"]["temperature"]
+
+  current_summary = parsed_weather_data["currently"]["summary"]
+
+  summary_of_next_sixty_minutes = parsed_weather_data["minutely"]["summary"]
+
+  summary_of_next_several_hours = parsed_weather_data["hourly"]["summary"]
+
+  summary_of_next_several_days = parsed_weather_data["daily"]["summary"]
 
 
 
-    @current_temperature = "#{@current_temperature}"
 
-    @current_summary = "Replace this string with your answer."
+    @current_temperature = current_temperature
 
-    @summary_of_next_sixty_minutes = "Replace this string with your answer."
+    @current_summary = current_summary
 
-    @summary_of_next_several_hours = "Replace this string with your answer."
+    @summary_of_next_sixty_minutes = summary_of_next_sixty_minutes
 
-    @summary_of_next_several_days = "Replace this string with your answer."
+    @summary_of_next_several_hours = summary_of_next_several_hours
+
+    @summary_of_next_several_days = summary_of_next_several_days
 
     render("street_to_weather.html.erb")
   end
