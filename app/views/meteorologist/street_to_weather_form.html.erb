@@ -1,12 +1,21 @@
-<h1>Meteorologist</h1>
-
-<p>Where are you?</p>
-
-<form action="/street_to_weather">
-  <div>
-    <label for="the_address">Street Address</label>
-    <input type="text" name="user_street_address" id="the_address">
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 text-center">
+      <h1>Meteorologist</h1>
+    </div>
   </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 text-center">
+      <p>Where are you?</p>
 
-  <button>Tell me the weather!</button>
-</form>
+      <form action="/street_to_weather">
+        <div>
+          <label for="the_address">Street Address</label>
+          <input type="text" name="user_street_address" id="the_address">
+        </div>
+
+        <button>Tell me the weather!</button>
+      </form>
+    </div>
+  </div>
