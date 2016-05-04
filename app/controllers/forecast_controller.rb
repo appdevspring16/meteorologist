@@ -18,7 +18,7 @@ class ForecastController < ApplicationController
     require 'open-uri'
     require 'json'
 
-    parsed_data = JSON.parse(open("https://api.forecast.io/forecast/b5041c65a640b3f007e68f68a031f4ed/41.8771962,-87.6289936").read)
+    parsed_data = JSON.parse(open("https://api.forecast.io/forecast/b5041c65a640b3f007e68f68a031f4ed/"+ @lat.to_s + @lng.to_s).read)
 
 
     @current_temperature = parsed_data["currently"]["temperature"]
