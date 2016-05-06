@@ -19,7 +19,7 @@ class MeteorologistController < ApplicationController
 
     require 'open-uri'
 
-    user_loc = "https://maps.googleapis.com/maps/api/geocode/json?address=#{@street_address}"
+    user_loc = "http://maps.googleapis.com/maps/api/geocode/json?address=#{@street_address}"
 
     parsed_loc = JSON.parse(open(user_loc).read)
 

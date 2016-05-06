@@ -1,4 +1,5 @@
-
+require 'open-uri'
+require 'json'
 
 class GeocodingController < ApplicationController
   def street_to_coords_form
@@ -10,6 +11,9 @@ class GeocodingController < ApplicationController
     @street_address = params[:user_street_address]   #this is what the user inputs for address
     url_safe_street_address = URI.encode(@street_address)
 
+
+
+
     # ==========================================================================
     # Your code goes below.
     # The street address the user input is in the string @street_address.
@@ -17,13 +21,12 @@ class GeocodingController < ApplicationController
     #   characters removed, is in the string url_safe_street_address.
     # ==========================================================================
 
-    require 'open-uri'
+    user_loc = "https://maps.googleapis.com/maps/api/geocode/json?address=#{url_safe_street_address}"
 
-    user_loc = "https://maps.googleapis.com/maps/api/geocode/json?address=#{@street_address}"
+
 
     open(user_loc)
 
-require 'json'
 
     parsed_loc = JSON.parse(open(user_loc).read)
 
