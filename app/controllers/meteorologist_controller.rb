@@ -26,8 +26,8 @@ class MeteorologistController < ApplicationController
 
     # url_safe_lat = URI.encode(latitude)
     # url_safe_lng = URI.encode(longitude)
-    # API Key : [redacted]
-    url_weather="https://api.forecast.io/forecast/[Redacted API Key]/" + @latitude.to_s + "," + @longitude.to_s
+    # API Key : 8a74be7befaeb6222bcf403316aa565e
+    url_weather="https://api.forecast.io/forecast/8a74be7befaeb6222bcf403316aa565e/" + @latitude.to_s + "," + @longitude.to_s
     parsed_data_weather=JSON.parse(open(url_weather).read)
 
     @current_temperature = parsed_data_weather["currently"]["temperature"]
