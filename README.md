@@ -9,6 +9,10 @@
  - Open up the entire folder in Atom.
  - `rails s`
  - Go to [http://localhost:3000](http://localhost:3000) in Chrome.
+ 
+## Getting Started video
+
+You'll find a very brief Getting Started video for this project in Canvas under **Pages**. You should still read this README thoroughly.
 
 ## Introduction
 
@@ -51,8 +55,6 @@ The first example they give is
 <img src='http://ask.initialversion.com/uploads/default/70/a1f0652613458d37.png' width="690" height="412">
 
 I folded away the `address_components` section to make the value of the `geometry` key stand out, since that is where our target lives: the `lat` and `lng` keys within the `location` hash. Notice that JSON uses curly braces for Hashes and square brackets for Arrays just like Ruby does.
-
-Also notice that when I hover my mouse over the `lat` value, the JSONView extension puts a hint about the path to get down to it starting all the way from the top in the status bar at the bottom-left of the browser window. That path is in JavaScript notation, but it's analagous to the Ruby we're going to eventually need.
 
 Alright, now that we have the data we need showing up in the browser window, what's next? First of all, we should be sure that we can customize this example request to get data that we care about. So how would we get the coordinates of "the corner of Foster and Sheridan"? Give it a try.
 
