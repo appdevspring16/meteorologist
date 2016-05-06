@@ -27,19 +27,20 @@ class MeteorologistController < ApplicationController
 
     @longitude = parsed_loc["results"][0]["geometry"]["location"]["lng"]
 
+
     user_weather = "https://api.forecast.io/forecast/f8464d2eead9dbb9801c6e0302bf7df8/#{@latitude},#{@longitude}"
 
     parsed_loc2 = JSON.parse(open(user_weather).read)
 
-    @current_temperature = parsed_loc["currently"]["temperature"]
+    @current_temperature = parsed_loc2["currently"]["temperature"]
 
-    @current_summary = parsed_loc["currently"]["summary"]
+    @current_summary = parsed_loc2["currently"]["summary"]
 
-    @summary_of_next_sixty_minutes = parsed_loc["minutely"]["summary"]
+    @summary_of_next_sixty_minutes = parsed_loc2["minutely"]["summary"]
 
-    @summary_of_next_several_hours = parsed_loc["hourly"]["summary"]
+    @summary_of_next_several_hours = parsed_loc2["hourly"]["summary"]
 
-    @summary_of_next_several_days = parsed_loc["daily"]["summary"]
+    @summary_of_next_several_days = parsed_loc2["daily"]["summary"]
 
     render("street_to_weather.html.erb")
   end
