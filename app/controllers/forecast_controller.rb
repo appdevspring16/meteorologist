@@ -25,7 +25,7 @@ class ForecastController < ApplicationController
 
     @current_summary = parsed_data["currently"]["summary"]
 
-    @summary_of_next_sixty_minutes = parsed_data["hourly"]["summary"]
+    @summary_of_next_sixty_minutes = parsed_data["minutely"]["summary"]
 
     @summary_of_next_several_hours = 'This hour: ' + parsed_data["hourly"]["data"][0]["summary"] + '; ' +  'Next hour: ' + parsed_data["hourly"]["data"][1]["summary"] + '; ' + 'Two hours from now: ' + parsed_data["hourly"]["data"][2]["summary"] + '; ' + 'Three hours from now: ' + parsed_data["hourly"]["data"][3]["summary"]
 

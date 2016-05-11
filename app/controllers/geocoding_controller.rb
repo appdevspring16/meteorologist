@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'chronic'
 
 class GeocodingController < ApplicationController
   def street_to_coords_form
@@ -17,7 +18,7 @@ class GeocodingController < ApplicationController
     #   characters removed, is in the string url_safe_street_address.
     # =========================================================================
 
-    
+
 
     url = "http://maps.googleapis.com/maps/api/geocode/json?address=#{url_safe_street_address}"
 
