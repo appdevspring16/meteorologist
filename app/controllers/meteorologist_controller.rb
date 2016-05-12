@@ -35,10 +35,9 @@ class MeteorologistController < ApplicationController
 
     @summary_of_next_sixty_minutes = parsed_data_forecast["minutely"]["summary"]
 
-    @summary_of_next_several_hours = 'This hour: ' + parsed_data_forecast["hourly"]["data"][0]["summary"] + '; ' +  'Next hour: ' + parsed_data_forecast["hourly"]["data"][1]["summary"] + '; ' + 'Two hours from now: ' + parsed_data_forecast["hourly"]["data"][2]["summary"] +
-    '; Three hours from now: ' + parsed_data_forecast["hourly"]["data"][3]["summary"]
+    @summary_of_next_several_hours = parsed_data["hourly"]["summary"]
 
-    @summary_of_next_several_days = 'Today: ' + parsed_data_forecast["daily"]["data"][0]["summary"] + ';  Tomorrow: ' + parsed_data_forecast["daily"]["data"][1]["summary"] + '; Two days from now: ' + parsed_data_forecast["daily"]["data"][2]["summary"] + '; Three days from now: ' + parsed_data_forecast["daily"]["data"][3]["summary"]
+    @summary_of_next_several_days = parsed_data["daily"]["summary"]
 
     render("street_to_weather.html.erb")
   end
