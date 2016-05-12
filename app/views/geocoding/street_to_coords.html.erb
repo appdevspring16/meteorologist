@@ -1,8 +1,40 @@
-<h1>Street &rarr; Coords Results</h1>
+<div class="container">
+
+  <div class="row padding-top-md">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="btn-group btn-group-justified">
+    <a href="/street_to_coords/new" class="btn btn-info btn-block">Street &rarr; Coords</a>
+    <a href="/coords_to_weather/new" class="btn btn-primary btn-block">Coords &rarr; Weather</a>
+    <a href="/street_to_weather/new" class="btn btn-primary btn-block">Street &rarr; Weather</a>
+</div>
+</div>
+</div>
+
+<div class="row padding-top-md">
+<div class="panel panel-info col-md-6 col-md-offset-3">
+<h1 class="panel-heading text-center">Street &rarr; Coords Lookup</h1>
+
+<form action="/street_to_coords" class="text-center">
+  <div class="form-group">
+    <label for="the_address" class="sr-only">Street Address</label>
+    <input class="form-control" type="text" name="user_street_address" id="the_address" placeholder="Enter your address">
+  </div>
+<div class="padding-top-md padding-bottom-md">
+  <button class="btn btn-default active">Lookup Coordinates</button>
+</div>
+</form>
+</div>
+</div>
+
+
+
+<div class="row padding-top-md">
+<div class="panel panel-success col-md-6 col-md-offset-3">
+<h1 class="panel-heading text-center">Street &rarr; Coords Results</h1>
 
 <dl>
   <dt>Street Address</dt>
-  <dd><%= @street_address %></dd>
+  <dd><%= @address %></dd>
 
   <dt>Latitude</dt>
   <dd><%= @latitude %></dd>
@@ -10,3 +42,11 @@
   <dt>Longitude</dt>
   <dd><%= @longitude %></dd>
 </dl>
+</div>
+</div>
+
+
+  </div>
+
+
+  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.028972201387!2d-85.67962204938956!3d38.25563409202132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886974a3ad3520f9%3A0xedc0ce0bd3355575!2s118+Claremont+Ave%2C+Louisville%2C+KY+40206!5e0!3m2!1sen!2sus!4v1459631526486" width=100% height=300px frameborder="0" style="border:0" allowfullscreen></iframe>" -->

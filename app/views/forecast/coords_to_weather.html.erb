@@ -1,4 +1,40 @@
-<h1>Coords &rarr; Weather Results</h1>
+<div class="container">
+
+  <div class="row padding-top-md">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="btn-group btn-group-justified">
+      <a href="/street_to_coords/new" class="btn btn-primary btn-block">Street &rarr; Coords</a>
+      <a href="/coords_to_weather/new" class="btn btn-info btn-block">Coords &rarr; Weather</a>
+      <a href="/street_to_weather/new" class="btn btn-primary btn-block">Street &rarr; Weather</a>
+    </div>
+  </div>
+  </div>
+
+
+<div class="row padding-top-md">
+<div class="panel panel-info col-md-6 col-md-offset-3">
+  <h1 class="panel-heading text-center">Coords &rarr; Weather Lookup</h1>
+<form action="/coords_to_weather" class="text-center">
+  <div class="form-group">
+    <label for="the_latitude" class="sr-only">Latitude</label>
+    <input class="form-control" type="text" name="user_latitude" id="the_latitude" placeholder="Enter latitude">
+  </div>
+
+  <div class="padding-top-sm">
+    <label for="the_longitude" class="sr-only">Longitude</label>
+    <input class="form-control" type="text" name="user_longitude" id="the_longitude" placeholder="Enter longitude">
+  </div>
+<div class="padding-top-md padding-bottom-md">
+  <button class="btn btn-default active">Lookup Weather</button>
+</div>
+</form>
+</div>
+</div>
+
+
+<div class="row padding-top-md">
+<div class="panel panel-success col-md-6 col-md-offset-3">
+<h1 class="panel-heading text-center">Coords &rarr; Weather Results</h1>
 
 <dl>
   <dt>Latitude</dt>
@@ -22,3 +58,8 @@
   <dt>Outlook for next several days</dt>
   <dd><%= @summary_of_next_several_days %></dd>
 </dl>
+
+  </div>
+</div>
+</div>
+</div>

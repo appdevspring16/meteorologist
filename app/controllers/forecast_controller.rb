@@ -18,15 +18,25 @@ class ForecastController < ApplicationController
 
 
 
-    @current_temperature = "Replace this string with your answer."
+raw_data = open("https://api.forecast.io/forecast/e44ac8fc846c2f9b48152197c6d94a7f/#{@lat},#{@lng}").read
+require = 'json'
+parsed_data = JSON.parse(raw_data)
 
-    @current_summary = "Replace this string with your answer."
+currently = parsed_data["currently"]
+minutely = parsed_data["minutely"]
+hourly = parsed_data["hourly"]
+daily = parsed_data["daily"]
 
-    @summary_of_next_sixty_minutes = "Replace this string with your answer."
+    @current_temperature = currently["temperature"]
 
-    @summary_of_next_several_hours = "Replace this string with your answer."
+    @current_summary = currently["summary"]
 
-    @summary_of_next_several_days = "Replace this string with your answer."
+    @summary_of_next_sixty_minutes = minutely["summary"]
+
+    @summary_of_next_several_hours = hourly["summary"]
+
+    @summary_of_next_several_days = daily["summary"]
+
 
     render("coords_to_weather.html.erb")
   end

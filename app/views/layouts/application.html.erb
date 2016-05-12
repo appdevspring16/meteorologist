@@ -5,15 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" charset="utf-8">
 </head>
+<style media="screen">
+  .padding-top-md{
+    padding-top: 20px;
+  }
+  .padding-bottom-md{
+    padding-bottom: 20px;
+  }
+.padding-top-sm{
+  padding-top: 10px;
+}
+
+</style>
 <body>
 
 <nav>
-  <ul>
-    <li><a href="/street_to_coords/new">Street &rarr; Coords</a></li>
-    <li><a href="/coords_to_weather/new">Coords &rarr; Weather</a></li>
-    <li><a href="/street_to_weather/new">Street &rarr; Weather</a></li>
-  </ul>
+
 </nav>
 
 <%= yield %>
